@@ -589,15 +589,15 @@ function loadShape(shapeKey) {
     computeAutoHighlights();
 }
 
-// Initial Load
-loadShape('octahedron');
-
 // ---- INTERACTION AND DOM ALIGNMENT ----
 const foldSlider = document.getElementById('foldSlider');
 const btnFold = document.getElementById('btnFold');
 const btnUnfold = document.getElementById('btnUnfold');
 const shapeSelect = document.getElementById('shapeSelect');
 const btnToggleEdges = document.getElementById('btnToggleEdges');
+
+// Initial Load sync
+loadShape(shapeSelect.value);
 
 let edgesVisible = true;
 
