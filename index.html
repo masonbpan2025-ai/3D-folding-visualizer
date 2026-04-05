@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Shape Folding Visualizer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div id="app"></div>
+  <div class="ui-panel">
+    <h1>3D Shape Folding Visualizer</h1>
+    <p>Fold the net to see the closed 3D shape</p>
+
+    <div class="control-group">
+      <label for="shapeSelect">Select Shape</label>
+      <select id="shapeSelect">
+        <optgroup label="Platonic Solids">
+          <option value="tetrahedron">Tetrahedron</option>
+          <option value="dodecahedron">Dodecahedron</option>
+        </optgroup>
+        <optgroup label="Octahedron Unfoldings (11 distinct nets)">
+          <option value="oct_net_1">Octahedron Net 1</option>
+          <option value="oct_net_2">Octahedron Net 2</option>
+          <option value="oct_net_3">Octahedron Net 3</option>
+          <option value="oct_net_4">Octahedron Net 4</option>
+          <option value="oct_net_5">Octahedron Net 5</option>
+          <option value="oct_net_6">Octahedron Net 6</option>
+          <option value="oct_net_7">Octahedron Net 7</option>
+          <option value="oct_net_8">Octahedron Net 8</option>
+          <option value="oct_net_9">Octahedron Net 9</option>
+          <option value="oct_net_10">Octahedron Net 10</option>
+          <option value="oct_net_11">Octahedron Net 11</option>
+        </optgroup>
+        <optgroup label="Other Shapes">
+          <option value="square_pyramid">Square Pyramid</option>
+        </optgroup>
+
+        <optgroup label="Triangular Prism">
+          <option value="puzzle_a">Puzzle A (Yellow, Valid Prism)</option>
+          <option value="puzzle_b">Puzzle B (Green, Valid Prism)</option>
+          <option value="puzzle_c">Puzzle C (Blue, Invalid)</option>
+          <option value="puzzle_d">Puzzle D (Red, Valid Prism)</option>
+          <option value="puzzle_e">Puzzle E (Yellow-Green, Invalid)</option>
+          <option value="puzzle_f">Puzzle F (Orange, Invalid)</option>
+          <option value="puzzle_g">Puzzle G (Dark Blue, Invalid)</option>
+          <option value="puzzle_h">Puzzle H (Brown, Valid Prism)</option>
+        </optgroup>
+        <optgroup label="Cubes (11 distinct unfolding nets)">
+          <option value="cube_1">Cube (1-4-1 Cross)</option>
+          <option value="cube_2">Cube (1-4-1 Offset 0:0)</option>
+          <option value="cube_3">Cube (1-4-1 Offset 0:1)</option>
+          <option value="cube_4">Cube (1-4-1 Offset 0:2)</option>
+          <option value="cube_5">Cube (1-4-1 Offset 0:3)</option>
+          <option value="cube_6">Cube (1-4-1 Offset 1:2)</option>
+          <option value="cube_7">Cube (2-3-1 Offset 0:0)</option>
+          <option value="cube_8">Cube (2-3-1 Offset 0:1)</option>
+          <option value="cube_9">Cube (2-3-1 Offset 1:1)</option>
+          <option value="cube_10">Cube (3-3 Stairs)</option>
+          <option value="cube_11">Cube (2-2-2 Stairs)</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <div class="control-group">
+      <label for="foldSlider">Fold Progress</label>
+      <input type="range" id="foldSlider" min="0" max="1" step="0.01" value="0" />
+    </div>
+
+    <div class="button-group">
+      <button id="btnFold">Fold Completely</button>
+      <button id="btnUnfold">Unfold (Flat)</button>
+      <button id="btnToggleEdges">Toggle Edge Colors</button>
+    </div>
+
+    <div class="info">
+      <p>Tip: Drag to rotate the camera. Scroll to zoom.</p>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
